@@ -7,25 +7,29 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>70119455-1B26-4AB0-B294-28F914C3117D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>XLUtilityClass</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>986E8211A7A1C4665DC12E5B565EB34880D1FD11</key>
+		<string>https://github.com/Quxiaolei/XLUtilityClass.git</string>
 		<key>FDBD591AD8298EAAD5D8FA69BE606C9A4F367609</key>
 		<string>https://github.com/Quxiaolei/DailyDemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>XLUtilityClass/XLUtilityClass.xcodeproj/project.xcworkspace</string>
+	<string>XLUtilityClass.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>986E8211A7A1C4665DC12E5B565EB34880D1FD11</key>
+		<string>../..</string>
 		<key>FDBD591AD8298EAAD5D8FA69BE606C9A4F367609</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Quxiaolei/DailyDemo.git</string>
+	<string>https://github.com/Quxiaolei/XLUtilityClass.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FDBD591AD8298EAAD5D8FA69BE606C9A4F367609</string>
+	<string>986E8211A7A1C4665DC12E5B565EB34880D1FD11</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>FDBD591AD8298EAAD5D8FA69BE606C9A4F367609</string>
 			<key>IDESourceControlWCCName</key>
-			<string>demo</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>986E8211A7A1C4665DC12E5B565EB34880D1FD11</string>
+			<key>IDESourceControlWCCName</key>
+			<string>XLUtilityClass</string>
 		</dict>
 	</array>
 </dict>

@@ -10,6 +10,9 @@
 #import <CommonCrypto/CommonDigest.h> //md5
 #import "Reachability.h" //判断网络连接状态
 @interface XLUtility : NSObject
+
+//验证手机号码
++ (BOOL)validateMobile:(NSString *)mobileNum;
 //md5加密
 + (NSString *)md5:(NSString *)str;
 //base64加密
