@@ -17,6 +17,9 @@
 + (NSString *)md5:(NSString *)str;
 //base64加密
 + (NSString * )getBase64StringWithoutSpace:(NSString *) preBase64String;
+//Unicode替换
++ (NSString *)replaceUnicode:(NSString *)unicodeStr;
+
 //获取时间戳
 + (NSString * )getTimestampSince1970;
 //获取添加时间戳的请求
