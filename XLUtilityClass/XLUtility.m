@@ -118,6 +118,7 @@
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }
 
+
 #pragma mark ---网络操作---
 
 /**
@@ -154,30 +155,63 @@
     
     return request;
 }
-/**
- *  判断网络状态
- *
- *  @return 是否存在网络状态
- */
-+ (BOOL)isExistenceNetwork
-{
-    BOOL isExistenceNetwork;
-    Reachability *reachability = [Reachability reachabilityWithHostName:@"www.baidu.com"];  // 测试服务器状态
-    
-    switch([reachability currentReachabilityStatus]) {
-        case NotReachable:
-            isExistenceNetwork = FALSE;
-            break;
-        case ReachableViaWWAN:
-            isExistenceNetwork = TRUE;
-            break;
-        case ReachableViaWiFi:
-            isExistenceNetwork = TRUE;
-            break;
-    }
-    return  isExistenceNetwork;
-}
+
 #pragma mark ---文件操作---
+
+
+/**
+ *  获取文件路径
+ *
+ */
++(NSString *)filePath:(NSString *)FileName
+{
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDirectory, YES)objectAtIndex:0];
+    NSString *path = [docPath stringByAppendingPathComponent:FileName];
+    return path;
+}
+/**
+ *  更新用户默认配置文件
+ *
+ *  @param objectArray 编码对象数组
+ *  @param keyArray    编码对象关键字
+ *
+ *  @return 成功标示:YES
+ */
+
++ (BOOL)setUserDefaultsWithObjectArray:(NSArray *)objectArray keyArray:(NSArray *)keyArray
+{
+    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+    for (int i = 0; i < objectArray.count; i++)
+    {
+        [userDefault setObject:objectArray[i] forKey:keyArray[i]];
+    }
+    [userDefault synchronize];
+    return YES;
+}
+
+/**
+ *  查询用户默认配置文件
+ *
+ *  @param keyArray 编码对象关键字
+ *
+ *  @return 可变编码对象数组
+ */
+
++ (NSMutableArray * )getUserDefaultsWithKeyArray:(NSArray *)keyArray
+{
+    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray * array = [[NSMutableArray alloc]initWithCapacity:keyArray.count];
+    
+    for (int i = 0; i < keyArray.count; i++)
+    {
+        if (![userDefault stringForKey:keyArray[i]]) {
+            return nil;
+        }
+        [array addObject:[userDefault stringForKey:keyArray[i]]];
+    }
+    return array;
+}
 
 /**
  *  归档
@@ -231,5 +265,52 @@
         [array addObject:[unarchiver decodeObjectForKey:keyArray[i]]];
     }
     return array;
+}
+
+//消息框
++ (void)showMessageViewWithContent:(NSString *)content inView:(UIView *)view
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    [view addSubview:hud];
+    hud.labelText=content;
+    hud.mode=MBProgressHUDModeText;
+    //指定距离中心点的X轴和Y轴的偏移量，如果不指定则在屏幕中间显示
+    hud.yOffset = 130.0f;
+    hud.xOffset = 10.0f;
+    [hud showAnimated:YES whileExecutingBlock:^{
+        sleep(1.0f);
+    } completionBlock:^{
+        [hud removeFromSuperview];
+    }];
+}
+//警告窗口
++ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonString:(NSString *)cancelString delegate:(id)delegate tag:(NSInteger)tag;
+{
+    UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelString otherButtonTitles:@"确定", nil];
+    alertView.tag = tag;
+    [alertView show];
+}
+
+
+/***
+ * 此函数用来判断是否网络连接服务器正常
+ * 需要导入Reachability类
+ */
++ (BOOL)isExistenceNetwork
+{
+    BOOL isExistenceNetwork;
+    Reachability *reachability = [Reachability reachabilityWithHostName:@"www.baidu.com"];  // 测试服务器状态
+    switch([reachability currentReachabilityStatus]) {
+        case NotReachable:
+            isExistenceNetwork = FALSE;
+            break;
+        case ReachableViaWWAN:
+            isExistenceNetwork = TRUE;
+            break;
+        case ReachableViaWiFi:
+            isExistenceNetwork = TRUE;
+            break;
+    }
+    return  isExistenceNetwork;
 }
 @end

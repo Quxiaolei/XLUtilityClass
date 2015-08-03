@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CommonCrypto/CommonDigest.h> //md5
 #import "Reachability.h" //判断网络连接状态
+#import "MBProgressHUD.h" //显示进度条
 @interface XLUtility : NSObject
 
+#pragma mark ---字符串处理---
 //验证手机号码
 + (BOOL)validateMobile:(NSString *)mobileNum;
 //md5加密
@@ -24,9 +27,28 @@
 + (NSString * )getTimestampSince1970;
 //获取添加时间戳的请求
 + (NSURLRequest *)loadRequestWithURLString:(NSString *)URLString;
+
+#pragma mark ---文件处理---
+//获取文件路径
++(NSString *)filePath:(NSString *)FileName;
+//更新用户默认配置文件
++ (BOOL)setUserDefaultsWithObjectArray:(NSArray *)objectArray keyArray:(NSArray *)keyArray;
+//查询用户默认配置文件
++ (NSMutableArray * )getUserDefaultsWithKeyArray:(NSArray *)keyArray;
 //归档
 + (BOOL)archiverWithObjectArray:(NSArray *)objectArray keyArray:(NSArray *)keyArray;
 //解档
 + (NSMutableArray *)unarchiverWithKeyArray:(NSArray *)keyArray;
 
+
+#pragma mark ---UI附加效果展示---
+//消息框
++ (void)showMessageViewWithContent:(NSString *)content inView:(UIView *)view;
+//警告窗口
++ (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonString:(NSString *)cancelString delegate:(id)delegate tag:(NSInteger)tag;
+
+
+#pragma mark ---网络判断---
+//判断当前网络是否连通
++ (BOOL)isExistenceNetwork;
 @end
