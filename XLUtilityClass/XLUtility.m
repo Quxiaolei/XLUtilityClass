@@ -13,7 +13,6 @@
 
 #pragma mark ---字符串处理---
 
-
 //验证手机号码
 + (BOOL)validateMobile:(NSString *)mobileNum
 {
@@ -118,7 +117,6 @@
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }
 
-
 #pragma mark ---网络操作---
 
 /**
@@ -157,7 +155,6 @@
 }
 
 #pragma mark ---文件操作---
-
 
 /**
  *  获取文件路径
@@ -267,6 +264,8 @@
     return array;
 }
 
+#pragma mark ---UI附加效果展示---
+
 //消息框
 + (void)showMessageViewWithContent:(NSString *)content inView:(UIView *)view
 {
@@ -291,6 +290,7 @@
     [alertView show];
 }
 
+#pragma mark ---网络判断---
 
 /***
  * 此函数用来判断是否网络连接服务器正常
