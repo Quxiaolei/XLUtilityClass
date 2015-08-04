@@ -164,6 +164,26 @@
 #pragma mark ---文件操作---
 
 /**
+ *  截屏功能
+ *
+ *  @param currentView 传入要保存的视图
+ *  @param size        传入要保存的视图的尺寸
+ */
+- (void)getSnapshotFromView:(UIView *)currentView
+{
+    //currentView:当前的view  创建一个基于位图的图形上下文并指定大小为size
+    UIGraphicsBeginImageContext(currentView.bounds.size);
+    //renderInContext呈现接受者及其子范围到指定的上下文
+    [currentView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    //返回一个基于当前图形上下文的图片
+    UIImage * viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    //移除栈顶的基于当前位图的图形上下文
+    UIGraphicsEndImageContext();
+    //然后将该图片保存到图片库
+    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);
+}
+
+/**
  *  获取文件路径
  *
  */

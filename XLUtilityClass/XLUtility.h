@@ -32,6 +32,8 @@
 + (NSURLRequest *)loadRequestWithURLString:(NSString *)URLString;
 
 #pragma mark ---文件处理---
+//保存视图的文件到本地
+- (void)getSnapshotFromView:(UIView *)currentView;
 //获取文件路径
 +(NSString *)filePath:(NSString *)FileName;
 //更新用户默认配置文件
