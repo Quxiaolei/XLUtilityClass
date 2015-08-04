@@ -78,6 +78,7 @@
 		A485FD521B60943D00940A2C /* XLUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLUtility.m; sourceTree = "<group>"; };
 		A485FD551B6097B000940A2C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A485FD561B6097B000940A2C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A4C61B3F1B7062A100A70FA9 /* XLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLConstants.h; sourceTree = "<group>"; };
 		A4CDD1331B6F429100DB77FD /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		A4CDD1341B6F429100DB77FD /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		A4CDD1351B6F429100DB77FD /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 				A485FD301B60940300940A2C /* AppDelegate.m */,
 				A485FD321B60940300940A2C /* ViewController.h */,
 				A485FD331B60940300940A2C /* ViewController.m */,
+				A4C61B3F1B7062A100A70FA9 /* XLConstants.h */,
 				A485FD511B60943D00940A2C /* XLUtility.h */,
 				A485FD521B60943D00940A2C /* XLUtility.m */,
 				A485FD351B60940300940A2C /* Main.storyboard */,

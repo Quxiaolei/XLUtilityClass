@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonDigest.h> //md5
 #import "Reachability.h" //判断网络连接状态
 #import "MBProgressHUD.h" //显示进度条
+#import "XLConstants.h" //显示宏定义
 @interface XLUtility : NSObject
 
 #pragma mark ---字符串处理---
