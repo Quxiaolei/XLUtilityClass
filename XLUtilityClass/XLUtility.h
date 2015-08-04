@@ -14,8 +14,10 @@
 @interface XLUtility : NSObject
 
 #pragma mark ---字符串处理---
+//验证邮箱
++(BOOL)isValidateEmail:(NSString *)email;
 //验证手机号码
-+ (BOOL)validateMobile:(NSString *)mobileNum;
++ (BOOL)isValidateMobile:(NSString *)mobileNum;
 //md5加密
 + (NSString *)md5:(NSString *)str;
 //base64加密

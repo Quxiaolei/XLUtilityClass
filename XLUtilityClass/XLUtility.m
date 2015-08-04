@@ -14,7 +14,7 @@
 #pragma mark ---字符串处理---
 
 //验证手机号码
-+ (BOOL)validateMobile:(NSString *)mobileNum
++ (BOOL)isValidateMobile:(NSString *)mobileNum
 {
     /**
      * 手机号码
@@ -61,6 +61,13 @@
     {
         return NO;
     }
+}
+//利用正则表达式验证邮箱的合法性
++(BOOL)isValidateEmail:(NSString *)email
+{
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
 }
 
 /**
