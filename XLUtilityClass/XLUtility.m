@@ -107,8 +107,11 @@
     return  [string substringWithRange:range];
 }
 /**
- *  Unicode替换
+ *  unicode转换
  *
+ *  @param unicodeStr 传入unicode码
+ *
+ *  @return 返回替换后的unicode
  */
 + (NSString *)replaceUnicode:(NSString *)unicodeStr
 {
@@ -123,6 +126,20 @@
     //NSLog(@"Output = %@", returnStr);
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@"\n"];
 }
+/**
+ *  获取字符串的高度
+ *
+ *  @param size   字体大小
+ *  @param string 字符串
+ *
+ *  @return 返回字符串的高度
+ */
++ (float)getTextHeightWithFontSize:(int)size andString:(NSString *)string
+{
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(280.0f, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:size]} context:nil];
+    return ceilf(rect.size.height);
+}
+
 
 #pragma mark ---网络操作---
 

@@ -23,9 +23,12 @@
 + (NSString *)md5:(NSString *)str;
 //base64加密
 + (NSString * )getBase64StringWithoutSpace:(NSString *) preBase64String;
-//Unicode替换
+//Unicode转换
 + (NSString *)replaceUnicode:(NSString *)unicodeStr;
+//获得字符串的高度
++ (float)getTextHeightWithFontSize:(int)size andString:(NSString *)string;
 
+#pragma mark ---网络操作---
 //获取时间戳
 + (NSString * )getTimestampSince1970;
 //获取添加时间戳的请求
@@ -51,7 +54,8 @@
 + (void)showMessageViewWithContent:(NSString *)content inView:(UIView *)view;
 //警告窗口
 + (void)showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonString:(NSString *)cancelString delegate:(id)delegate tag:(NSInteger)tag;
-
+//根据字符串的长度调节label的行数
++ (void)adjust;
 
 #pragma mark ---网络判断---
 //判断当前网络是否连通
