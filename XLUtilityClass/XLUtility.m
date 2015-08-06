@@ -180,6 +180,22 @@
 
 #pragma mark ---文件操作---
 
++ (NSString *)getFilePathWithDirectoryName:(NSString *)directoryName fileName:(NSString *)fileName
+{
+    NSString * directoryPath = [NSString stringWithFormat:@"%@/%@",getDocumentsPath,directoryName];
+    
+	//判断文件是否存在
+    if (![[NSFileManager defaultManager] fileExistsAtPath:directoryPath])
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString * filePath = [NSString stringWithFormat:@"%@/%@",directoryPath,fileName];
+    
+    return filePath;
+}
+
+
 /**
  *  截屏功能
  *

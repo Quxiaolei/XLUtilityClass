@@ -35,6 +35,8 @@
 + (NSURLRequest *)loadRequestWithURLString:(NSString *)URLString;
 
 #pragma mark ---文件处理---
+//通过文件夹和文件名获取文件路径
++ (NSString *)getFilePathWithDirectoryName:(NSString *)directoryName fileName:(NSString *)fileName;
 //保存视图的文件到本地
 - (void)getSnapshotFromView:(UIView *)currentView;
 //获取文件路径
