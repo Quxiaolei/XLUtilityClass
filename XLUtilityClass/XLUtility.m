@@ -53,12 +53,10 @@
     if (([regextestmobile evaluateWithObject:mobileNum] == YES)
         || ([regextestcm evaluateWithObject:mobileNum] == YES)
         || ([regextestct evaluateWithObject:mobileNum] == YES)
-        || ([regextestcu evaluateWithObject:mobileNum] == YES))
-    {
+        || ([regextestcu evaluateWithObject:mobileNum] == YES)){
         return YES;
     }
-    else
-    {
+    else{
         return NO;
     }
 }
@@ -182,7 +180,7 @@
 
 + (NSString *)getFilePathWithDirectoryName:(NSString *)directoryName fileName:(NSString *)fileName
 {
-    NSString * directoryPath = [NSString stringWithFormat:@"%@/%@",getDocumentsPath,directoryName];
+    NSString * directoryPath = [NSString stringWithFormat:@"%@/%@",directoryName,fileName];
     
 	//判断文件是否存在
     if (![[NSFileManager defaultManager] fileExistsAtPath:directoryPath])
@@ -260,8 +258,7 @@
     
     NSMutableArray * array = [[NSMutableArray alloc]initWithCapacity:keyArray.count];
     
-    for (int i = 0; i < keyArray.count; i++)
-    {
+    for (int i = 0; i < keyArray.count; i++){
         if (![userDefault stringForKey:keyArray[i]]) {
             return nil;
         }
@@ -284,8 +281,7 @@
     NSMutableData *data = [NSMutableData data];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
     //编码
-    for (int i = 0; i < objectArray.count; i++)
-    {
+    for (int i = 0; i < objectArray.count; i++){
         [archiver encodeObject:objectArray[i] forKey:keyArray[i]];
     }
     //完成编码，将上面的归档数据填充到data中，此时data中已经存储了归档对象的数据
@@ -293,8 +289,7 @@
     
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/userData"];
     BOOL success = [data writeToFile:filePath atomically:YES];
-    if(success)
-    {
+    if(success){
         NSLog(@"用户信息,归档成功");
         return YES;
     }
@@ -317,8 +312,7 @@
     
     NSMutableArray * array = [[NSMutableArray alloc]initWithCapacity:keyArray.count];
     //解归档
-    for (int i = 0; i < keyArray.count; i++)
-    {
+    for (int i = 0; i < keyArray.count; i++){
         [array addObject:[unarchiver decodeObjectForKey:keyArray[i]]];
     }
     return array;
