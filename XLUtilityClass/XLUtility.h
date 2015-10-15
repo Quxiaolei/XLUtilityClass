@@ -14,7 +14,7 @@
 #import "XLConstants.h" //显示宏定义
 @interface XLUtility : NSObject
 
-#pragma mark ---字符串处理---
+#pragma mark - 字符串处理
 //验证邮箱
 +(BOOL)isValidateEmail:(NSString *)email;
 //验证手机号码
@@ -28,17 +28,21 @@
 //获得字符串的高度
 + (float)getTextHeightWithFontSize:(int)size andString:(NSString *)string;
 
-#pragma mark ---网络操作---
+#pragma mark - 网络操作
 //获取时间戳
-+ (NSString * )getTimestampSince1970;
++ (NSString *)getTimestampSince1970;
 //获取添加时间戳的请求
 + (NSURLRequest *)loadRequestWithURLString:(NSString *)URLString;
 
-#pragma mark ---文件处理---
+#pragma mark - 网络判断
+//判断当前网络是否连通
++ (BOOL)isExistenceNetwork;
+
+#pragma mark - 文件处理
 //通过文件夹和文件名获取文件路径
 + (NSString *)getFilePathWithDirectoryName:(NSString *)directoryName fileName:(NSString *)fileName;
 //保存视图的文件到本地
-- (void)getSnapshotFromView:(UIView *)currentView;
++ (void)getSnapshotFromView:(UIView *)currentView;
 //获取文件路径
 +(NSString *)filePath:(NSString *)FileName;
 //更新用户默认配置文件
@@ -51,7 +55,7 @@
 + (NSMutableArray *)unarchiverWithKeyArray:(NSArray *)keyArray;
 
 
-#pragma mark ---UI附加效果展示---
+#pragma mark - UI附加效果展示
 //消息框
 + (void)showMessageViewWithContent:(NSString *)content inView:(UIView *)view;
 //警告窗口
@@ -59,7 +63,4 @@
 //根据字符串的长度调节label的行数
 + (void)adjust;
 
-#pragma mark ---网络判断---
-//判断当前网络是否连通
-+ (BOOL)isExistenceNetwork;
 @end

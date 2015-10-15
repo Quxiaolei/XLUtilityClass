@@ -200,7 +200,7 @@
  *  @param currentView 传入要保存的视图
  *  @param size        传入要保存的视图的尺寸
  */
-- (void)getSnapshotFromView:(UIView *)currentView
++ (void)getSnapshotFromView:(UIView *)currentView
 {
     //currentView:当前的view  创建一个基于位图的图形上下文并指定大小为size
     UIGraphicsBeginImageContext(currentView.bounds.size);
